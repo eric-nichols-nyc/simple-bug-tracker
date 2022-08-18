@@ -24,7 +24,9 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowClick = () => setShowPassword(!showPassword);
-
+  const handleSubmit = () => {
+    alert('click')
+  };
   return (
     <Flex
       flexDirection="column"
@@ -81,6 +83,7 @@ const Login = () => {
                 </FormHelperText>
               </FormControl>
               <Button
+                onClick={handleSubmit}
                 borderRadius={0}
                 type="submit"
                 variant="solid"
