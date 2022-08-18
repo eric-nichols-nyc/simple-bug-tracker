@@ -24,7 +24,9 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowClick = () => setShowPassword(!showPassword);
-  const handleSubmit = async() => {
+  
+  const handleSubmit = async(event) => {
+    event.preventDefault();
     const body ={
       "email":"email",
       "password":"password"
@@ -85,7 +87,7 @@ const Login = () => {
                     placeholder="Password"
                   />
                   <InputRightElement width="4.5rem">
-                    <Button h="1.75rem" size="sm" onClick={handleShowClick}>
+                    <Button h="1.75rem" size="sm" onClick={(e)=>handleShowClick(e)}>
                       {showPassword ? "Hide" : "Show"}
                     </Button>
                   </InputRightElement>
