@@ -97,7 +97,7 @@ const Login = () => {
                 </FormHelperText>
               </FormControl>
               <Button
-                onClick={handleSubmit}
+                onClick={(e)=>handleSubmit(e)}
                 borderRadius={0}
                 type="submit"
                 variant="solid"
