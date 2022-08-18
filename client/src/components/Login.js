@@ -24,8 +24,20 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowClick = () => setShowPassword(!showPassword);
-  const handleSubmit = () => {
-    alert('click')
+  const handleSubmit = async() => {
+    const body ={
+      "email":"email",
+      "password":"password"
+    }
+    const res = await fetch('/signin',{
+      method:"post",
+      headers:{
+          "Content-Type":"application/json",
+          "Authorization":localStorage.getItem('token')
+      },
+      body:JSON.stringify(body)
+  })
+   console.log(res.json())
   };
   return (
     <Flex
